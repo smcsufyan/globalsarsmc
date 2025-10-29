@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
         .coming-soon-section {
-            height: 100vh;
+            /* Full viewport height to ensure centering */
+            height: 100vh; 
             display: flex;
             justify-content: center;
             align-items: center;
@@ -21,80 +22,60 @@
         }
 
         .soon-content {
-            padding: 40px;
-            max-width: 600px;
+            padding: 50px 40px; /* Increased top/bottom padding for better vertical size */
+            max-width: 700px; /* Increased max-width for better desktop look */
             z-index: 10;
         }
 
         .soon-content h1 {
-            font-size: 4rem;
+            font-size: 4.5rem; /* Slightly larger title */
             color: var(--color-primary-accent); /* Cyan */
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             text-shadow: 0 0 10px var(--color-primary-accent); 
+            line-height: 1.1;
         }
 
         .soon-content p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.4rem; /* Larger font size for main message */
+            margin-bottom: 40px; /* Increased spacing */
+            color: rgba(255, 255, 255, 0.85); /* Brighter text */
         }
         
         .animated-wave {
-            font-size: 4rem;
+            font-size: 5rem; /* Larger icon */
             display: block;
-            margin: 0 auto 20px;
+            margin: 0 auto 25px;
             color: var(--color-primary-accent);
             animation: pulse 1.5s infinite alternate;
         }
 
         @keyframes pulse {
-            from { opacity: 0.7; transform: scale(1); }
+            from { opacity: 0.8; transform: scale(1); }
             to { opacity: 1; transform: scale(1.05); }
         }
 
-        /* Email Form Styling */
-        .notification-form input {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 20px;
-            border: 1px solid var(--color-glass-border);
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.05); 
-            color: var(--color-text-light);
-            font-family: var(--font-primary);
+        .back-home-button {
+             /* Using primary cta styles for home button */
+            margin-top: 20px;
         }
 
-        .notification-form button {
-            width: 100%;
-            padding: 15px;
-            font-weight: 600;
-            background: var(--color-primary-accent);
-            color: var(--color-dark-base);
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
+        /* Email details are removed */
 
-        .notification-form button:hover {
-            background: var(--color-secondary-highlight);
-        }
-
-        .contact-details {
-            margin-top: 40px;
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.5);
-        }
-        
-        .contact-details a {
-            color: var(--color-primary-accent);
-            margin: 0 5px;
-        }
-        
-        /* Mobile adjustment */
-        @media (max-width: 576px) {
-            .soon-content h1 { font-size: 3rem; }
-            .soon-content { padding: 30px 15px; }
+        /* Mobile adjustment for better size */
+        @media (max-width: 768px) {
+            .soon-content {
+                max-width: 90%; /* Use full width on mobile */
+                padding: 40px 20px;
+            }
+            .soon-content h1 { 
+                font-size: 3rem; /* Adjusted for smaller screens */
+            }
+            .soon-content p {
+                font-size: 1.1rem;
+            }
+            .animated-wave {
+                 font-size: 4rem;
+            }
         }
     </style>
 </head>
@@ -118,28 +99,15 @@
         <div class="soon-content glass-card" data-aos="zoom-in">
             <span class="animated-wave">📻</span>
             <h1>BROADCAST IN PROGRESS</h1>
-            <p>Our **Knowledge Hub** and **Sarigama Radio** are being mastered to bring you exclusive content, tutorials, and behind-the-scenes access. Get notified when we go live!</p>
+            <p>Our **Knowledge Hub** and **Sarigama Radio** are being mastered to bring you exclusive content, tutorials, and behind-the-scenes access. Stay tuned!</p>
+            
+            <a href="index.html" class="cta-button primary-cta back-home-button">
+                <i class="fas fa-home"></i> Back to Home
+            </a>
 
-            <div class="contact-details">
-                For urgent inquiries, contact us directly: 
-                <a href="mailto:sarigamamusiccorner@gmail.com" class="glowing-link">sarigamamusiccorner@gmail.com</a>
-                <a href="mailto:smcsufyan@gmail.com" class="glowing-link">smcsufyan@gmail.com</a>
             </div>
-        </div>
     </section>
 
-    <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/6901741225896a19502d7096/1j8mqqq78';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
-    </script>
-    
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 800, once: true });
