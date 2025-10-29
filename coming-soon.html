@@ -6,7 +6,7 @@
     <title>Coming Soon - Sarigama Music Corner</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="assets/images/logo.svg" type="image/svg+xml">
+    <link rel="icon" href="assets/images/SMC.PNG" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
         .coming-soon-section {
@@ -15,7 +15,9 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: linear-gradient(45deg, var(--color-dark-base), #150f24);
+            background: linear-gradient(45deg, var(--color-dark-base) 0%, #150f24 100%);
+            position: relative;
+            overflow: hidden;
         }
 
         .soon-content {
@@ -26,65 +28,123 @@
 
         .soon-content h1 {
             font-size: 4rem;
-            color: var(--color-accent-teal);
+            color: var(--color-primary-accent); /* Cyan */
             margin-bottom: 20px;
-            /* Refined glow */
-            text-shadow: 0 0 10px var(--color-accent-teal); 
+            text-shadow: 0 0 10px var(--color-primary-accent); 
         }
 
         .soon-content p {
-            font-size: 1.5rem;
-            margin-bottom: 40px;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
             color: rgba(255, 255, 255, 0.7);
         }
         
-        .animated-circle {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 5px solid var(--color-accent-gold);
-            margin: 0 auto 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            animation: spin 8s linear infinite;
-            /* Refined shadow/glow for the circle */
-            box-shadow: 0 0 10px var(--color-accent-gold); 
+        .animated-wave {
+            font-size: 4rem;
+            display: block;
+            margin: 0 auto 20px;
+            color: var(--color-primary-accent);
+            animation: pulse 1.5s infinite alternate;
         }
 
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+        @keyframes pulse {
+            from { opacity: 0.7; transform: scale(1); }
+            to { opacity: 1; transform: scale(1.05); }
+        }
+
+        /* Email Form Styling */
+        .notification-form input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid var(--color-glass-border);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05); 
+            color: var(--color-text-light);
+            font-family: var(--font-primary);
+        }
+
+        .notification-form button {
+            width: 100%;
+            padding: 15px;
+            font-weight: 600;
+            background: var(--color-primary-accent);
+            color: var(--color-dark-base);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .notification-form button:hover {
+            background: var(--color-secondary-highlight);
+        }
+
+        .contact-details {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .contact-details a {
+            color: var(--color-primary-accent);
+            margin: 0 5px;
+        }
+        
+        /* Mobile adjustment */
+        @media (max-width: 576px) {
+            .soon-content h1 { font-size: 3rem; }
+            .soon-content { padding: 30px 15px; }
         }
     </style>
 </head>
 <body>
     <header class="main-header">
         <div class="logo">
-            <img src="assets/images/logo.svg" alt="Sarigama Music Corner Logo" class="glowing-logo">
-            <span>SARIGAMA</span>
+            <img src="assets/images/SMC.PNG" alt="Sarigama Music Corner Logo" class="glowing-logo">
+            <span>SMC</span>
         </div>
         <nav class="nav-menu">
             <a href="index.html">Home</a>
-            <a href="index.html#about">About</a>
-            <a href="index.html#services">Services</a>
             <a href="releases.html">Releases</a>
             <a href="artists.html">Artists</a>
+            <a href="blog-home.html">News Hub</a>
             <a href="coming-soon.html" class="active">Radio/Knowledge</a>
             <a href="index.html#contact" class="nav-contact-btn">Contact Us</a>
         </nav>
     </header>
 
     <section class="coming-soon-section">
-        <div class="soon-content glass-card">
-            <div class="animated-circle">🎙️</div>
-            <h1>The Sarigama Broadcast</h1>
-            <p>Our **Knowledge Hub** and **Radio Section** are currently being mastered to bring you the highest quality content. Stay tuned!</p>
-            <a href="index.html" class="cta-button primary-cta">Go Back Home</a>
+        <div class="soon-content glass-card" data-aos="zoom-in">
+            <span class="animated-wave">📻</span>
+            <h1>BROADCAST IN PROGRESS</h1>
+            <p>Our **Knowledge Hub** and **Sarigama Radio** are being mastered to bring you exclusive content, tutorials, and behind-the-scenes access. Get notified when we go live!</p>
+            
+            <form class="notification-form" action="https://formspree.io/f/mzzvlvqy" method="POST">
+                <input type="email" name="email_for_notification" placeholder="Enter your email to get notified" required>
+                <button type="submit">Notify Me! <i class="fas fa-bell"></i></button>
+            </form>
+
+            <div class="contact-details">
+                For urgent inquiries, contact us directly: 
+                <a href="mailto:sarigamamusiccorner@gmail.com" class="glowing-link">sarigamamusiccorner@gmail.com</a>
+                <a href="mailto:smcsufyan@gmail.com" class="glowing-link">smcsufyan@gmail.com</a>
+            </div>
         </div>
     </section>
 
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/6901741225896a19502d7096/1j8mqqq78';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 800, once: true });
