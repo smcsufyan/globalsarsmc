@@ -1,0 +1,614 @@
+/* --- Global Styles & Variables (Not changed) --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import url('https://unpkg.com/aos@2.3.1/dist/aos.css'); /* AOS Library */
+
+:root {
+    --color-dark-base: #0A0A1F;
+    --color-medium-dark: #1A1A3A;
+    --color-text-light: #F0F0F0;
+    --color-accent-gold: #FFB84D;
+    --color-accent-teal: #00FFFF;
+    --color-glass-base: rgba(255, 255, 255, 0.05);
+    --color-glass-border: rgba(255, 255, 255, 0.15);
+    --font-primary: 'Poppins', sans-serif;
+    --section-padding: 80px;
+}
+
+/* Base Reset and Body Styling (Not changed) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--color-text-light);
+    background-color: var(--color-dark-base);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* --- Typography & Headings (Not changed) --- */
+.section-padding {
+    padding: var(--section-padding) 0;
+    position: relative;
+    z-index: 1;
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 60px;
+    letter-spacing: 1px;
+}
+
+.cinematic-heading {
+    font-size: 5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.1;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.1); 
+}
+
+.glowing-text {
+    text-shadow: 0 0 5px var(--color-accent-teal); 
+}
+
+/* --- Reusable Glassmorphism Card Style (Not changed) --- */
+.glass-card {
+    background: var(--color-glass-base);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 12px;
+    border: 1px solid var(--color-glass-border);
+    box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.1), 0 4px 20px rgba(0, 0, 0, 0.3); 
+    padding: 30px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px 0 rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 255, 255, 0.4); 
+}
+
+/* --- Global Button Styles (Not changed) --- */
+.cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.primary-cta {
+    background: var(--color-accent-gold);
+    color: var(--color-dark-base);
+}
+
+.primary-cta:hover {
+    background: transparent;
+    border-color: var(--color-accent-gold);
+    color: var(--color-accent-gold);
+    box-shadow: 0 0 10px var(--color-accent-gold); 
+}
+
+.secondary-cta {
+    background: transparent;
+    color: var(--color-accent-teal);
+    border-color: var(--color-accent-teal);
+    margin-left: 15px;
+}
+
+.secondary-cta:hover {
+    background: var(--color-accent-teal);
+    color: var(--color-dark-base);
+    box-shadow: 0 0 10px var(--color-accent-teal); 
+}
+
+.disabled-btn {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* --- Header & Navigation (Not changed) --- */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(10, 10, 31, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.glowing-logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.nav-menu a {
+    margin-left: 30px;
+    font-weight: 400;
+    position: relative;
+}
+
+.nav-menu a:hover {
+    color: var(--color-accent-teal);
+}
+
+.nav-contact-btn {
+    padding: 8px 20px;
+    border: 1px solid var(--color-accent-gold);
+    border-radius: 20px;
+    margin-left: 40px;
+}
+
+/* --- 1. Hero Section (Not changed) --- */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(10, 10, 31, 0.8), rgba(10, 10, 31, 0.8)), url('../images/hero-bg.jpg') no-repeat center center/cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    z-index: 10;
+}
+
+.hero-section p {
+    font-size: 1.5rem;
+    margin: 20px 0 40px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(0, 255, 255, 0.05),
+        rgba(0, 255, 255, 0.05) 5px,
+        transparent 5px,
+        transparent 20px
+    );
+    animation: moveLines 120s linear infinite;
+    z-index: 1;
+    opacity: 0.3;
+}
+
+@keyframes moveLines {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 1000px 1000px;
+    }
+}
+
+/* --- 2. About Us Section (RESTORED 2-Column) --- */
+.about-section {
+    background-color: var(--color-medium-dark);
+}
+
+/* RESTORED: Two column grid for text and visual/logo */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Restored to 2 columns */
+    gap: 40px;
+    align-items: center;
+}
+
+.impact-text {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--color-accent-gold);
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+/* REMOVED: about-text padding and centering (reverting to original) */
+.about-text {
+    padding: 0;
+    text-align: left;
+}
+
+.about-visual {
+    padding: 20px;
+}
+
+.visual-placeholder {
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+}
+
+.about-logo-box {
+    padding: 40px; /* Make the glass card slightly larger for the logo */
+}
+
+.about-logo-image {
+    max-width: 80%; /* Control the size of the logo inside the box */
+    height: auto;
+    opacity: 0.8; /* Slight transparency for the effect */
+}
+
+/* --- 3. Our Services Section (Not changed) --- */
+.services-section {
+    background-color: var(--color-dark-base);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    text-align: center;
+    cursor: pointer;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+}
+
+.service-card:hover {
+    border-left-color: var(--color-accent-teal);
+    border-right-color: var(--color-accent-teal);
+}
+
+.service-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 8px var(--color-accent-gold)); 
+}
+
+.service-card h3 {
+    color: var(--color-accent-gold);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* --- 4. Our Team Section (Not changed) --- */
+.team-carousel {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+.team-carousel::-webkit-scrollbar {
+    display: none;
+}
+.team-carousel {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.team-card {
+    min-width: 250px;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.member-photo-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    background: radial-gradient(circle, var(--color-accent-teal) 0%, transparent 70%);
+    padding: 5px;
+    animation: pulseGlow 4s infinite alternate;
+}
+
+.member-photo {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    border: 3px solid var(--color-dark-base);
+}
+
+.member-role {
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 15px;
+    transition: color 0.3s;
+}
+
+.team-card:hover .member-role {
+    color: var(--color-accent-teal);
+    text-shadow: 0 0 5px var(--color-accent-teal); 
+}
+
+@keyframes pulseGlow {
+    from { box-shadow: 0 0 3px var(--color-accent-teal); } 
+    to { box-shadow: 0 0 10px var(--color-accent-teal); } 
+}
+
+.team-note {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.view-all-btn {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.glowing-link i.fab {
+    font-size: 1.5rem;
+    margin: 0 8px;
+    transition: text-shadow 0.3s, color 0.3s;
+    color: var(--color-accent-gold);
+}
+
+.team-card .glowing-link i.fab {
+    color: var(--color-accent-gold);
+}
+
+.team-card .glowing-link:hover i.fab {
+    text-shadow: 0 0 8px var(--color-accent-gold); 
+    color: var(--color-accent-gold);
+}
+
+/* --- 6. Knowledge / Radio Section (Not changed) --- */
+.knowledge-section {
+    text-align: center;
+    background-color: var(--color-medium-dark);
+}
+
+.coming-soon-banner {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.coming-soon-banner h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.coming-soon-banner p {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 20px;
+}
+
+/* --- 7. Contact Us Section (Not changed) --- */
+.contact-section {
+    background: linear-gradient(145deg, var(--color-dark-base) 0%, #171738 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.contact-form-container {
+    padding: 40px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid var(--color-glass-border);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--color-text-light);
+    font-family: var(--font-primary);
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--color-accent-teal);
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.4); 
+}
+
+.form-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.whatsapp-cta {
+    background-color: #25D366; 
+    color: white;
+    border-color: #25D366;
+}
+.whatsapp-cta:hover {
+    background: transparent;
+    color: #25D366;
+    border-color: #25D366;
+    box-shadow: 0 0 10px #25D366; 
+}
+
+.contact-info h3 {
+    font-size: 2rem;
+    color: var(--color-accent-gold);
+    margin-bottom: 20px;
+}
+
+.info-detail {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.info-detail strong {
+    font-weight: 600;
+    color: var(--color-text-light);
+    display: inline-block;
+    min-width: 100px;
+}
+
+/* Floating CTA Button (Not changed) */
+.floating-cta-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--color-accent-teal);
+    color: var(--color-dark-base);
+    padding: 15px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0, 255, 255, 0.4); 
+    z-index: 999;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.floating-cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 255, 255, 0.7); 
+}
+
+/* --- Footer (Not changed) --- */
+.main-footer {
+    background-color: var(--color-dark-base);
+    padding: 30px 0;
+    border-top: 1px solid var(--color-glass-border);
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 10px;
+    align-items: center;
+}
+
+.social-links a {
+    margin: 0 10px;
+}
+
+.social-icon-gold i.fab {
+    color: var(--color-accent-gold);
+}
+.social-icon-teal i.fab {
+    color: var(--color-accent-teal);
+}
+
+.social-links a:hover i.fab {
+    text-shadow: 0 0 10px; 
+}
+
+.social-icon-gold:hover i.fab {
+    text-shadow: 0 0 8px var(--color-accent-gold); 
+}
+.social-icon-teal:hover i.fab {
+    text-shadow: 0 0 8px var(--color-accent-teal); 
+}
+
+
+.footer-note {
+    padding-top: 10px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* --- Media Queries (UPDATED) --- */
+@media (max-width: 992px) {
+    .section-title {
+        font-size: 2.5rem;
+    }
+    .cinematic-heading {
+        font-size: 3.5rem;
+    }
+    /* Restored about-grid for mobile */
+    .about-grid, .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    .about-visual, .contact-form-container {
+        order: 1;
+    }
+    .about-text {
+        order: 2;
+        padding: 0; 
+        text-align: center;
+    }
+    .contact-info {
+        order: 2;
+    }
+    .services-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .main-header {
+        padding: 15px 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .cinematic-heading {
+        font-size: 2.5rem;
+    }
+    .hero-section p {
+        font-size: 1.2rem;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .secondary-cta {
+        margin-left: 0;
+    }
+    .footer-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .glowing-link i.fab {
+        font-size: 1.2rem;
+    }
+}
