@@ -1,4 +1,4 @@
-/* --- Global Styles & Variables (UPDATED COLOR PALETTE) --- */
+/* --- Global Styles & Variables --- */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
 @import url('https://unpkg.com/aos@2.3.1/dist/aos.css'); /* AOS Library for animations */
 
@@ -565,14 +565,12 @@ a {
 /* --- Media Queries (Responsive) --- */
 
 @media (max-width: 1024px) {
-    /* Tablet/Landscape Phone Adjustments */
     .section-title { font-size: 2.2rem; }
     .nav-menu a { margin-left: 15px; }
     .impact-text { font-size: 1.3rem; }
 }
 
 @media (max-width: 768px) {
-    /* Mobile Portrait / Tablet Adjustments */
     .section-title { font-size: 2rem; margin-bottom: 40px; }
     
     .main-header { padding: 15px 20px; }
